@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="check-context.xml"/>
+    <bean id="dao_check" class="rek.oop.dao.check.impls.DaoCheckImpl">
+        <constructor-arg>
+            <list>
+                <ref bean="Check0" />
+                <ref bean="Check1" />
+                <ref bean="Check2" />
+                <ref bean="Check3" />
+                <ref bean="Check4" />
+                <ref bean="Check5" />
+                <ref bean="Check6" />
+                <ref bean="Check7" />
+                <ref bean="Check8" />
+                <ref bean="Check9" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>

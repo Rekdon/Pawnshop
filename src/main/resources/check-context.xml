@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource = "seller-context.xml"/>
+    <import resource = "client-context.xml"/>
+    <import resource = "goods-context.xml"/>
+
+    <bean id="Check0" class="rek.oop.model.check.Check">
+        <property name = "id" value="1"/>
+        <property name="client" ref= "Client0"/>
+        <property name = "Seller" ref="Boss"/>
+        <property name = "Goods" ref="Antiques"/>
+    </bean>
+
+
+    <bean id="Check1" class="rek.oop.model.check.Check">
+        <property name = "id" value="2"/>
+        <property name = "Client" ref="Client1"/>
+        <property name = "Seller" ref="ExperiencedSeller"/>
+        <property name = "Goods" ref="Stead"/>
+    </bean>
+
+    <bean id="Check2" class="rek.oop.model.check.Check">
+        <property name = "id" value="3"/>
+        <property name = "Client" ref="Client2"/>
+        <property name = "Seller" ref="NoviceSeller"/>
+        <property name = "Goods" ref="Jewelry"/>
+    </bean>
+
+    <bean id="Check3" class="rek.oop.model.check.Check">
+        <property name = "id" value="4"/>
+        <property name = "Client" ref="Client3"/>
+        <property name = "Seller" ref="NoviceSeller"/>
+        <property name = "Goods" ref="Technique"/>
+    </bean>
+
+    <bean id="Check4" class="rek.oop.model.check.Check">
+    <property name = "id" value="5"/>
+    <property name = "Client" ref="Client4"/>
+    <property name = "Seller" ref="ExperiencedSeller"/>
+    <property name = "Goods" ref="Antiques2"/>
+</bean>
+
+    <bean id="Check5" class="rek.oop.model.check.Check">
+        <property name = "id" value="6"/>
+        <property name = "Client" ref="Client5"/>
+        <property name = "Seller" ref="ExperiencedSeller"/>
+        <property name = "Goods" ref="Antiques3"/>
+    </bean>
+
+    <bean id="Check6" class="rek.oop.model.check.Check">
+        <property name = "id" value="7"/>
+        <property name = "Client" ref="Client6"/>
+        <property name = "Seller" ref="Boss"/>
+        <property name = "Goods" ref="Technique1"/>
+    </bean>
+
+    <bean id="Check7" class="rek.oop.model.check.Check">
+    <property name = "id" value="8"/>
+    <property name = "Client" ref="Client7"/>
+    <property name = "Seller" ref="Boss"/>
+    <property name = "Goods" ref="Technique2"/>
+</bean>
+
+    <bean id="Check8" class="rek.oop.model.check.Check">
+        <property name = "id" value="9"/>
+        <property name = "Client" ref="Client8"/>
+        <property name = "Seller" ref="Boss"/>
+        <property name = "Goods" ref="Technique3"/>
+    </bean>
+
+    <bean id="Check9" class="rek.oop.model.check.Check">
+        <property name = "id" value="10"/>
+        <property name = "Client" ref="Client9"/>
+        <property name = "Seller" ref="ExperiencedSeller"/>
+        <property name = "Goods" ref="Technique4"/>
+    </bean>
+
+</beans>

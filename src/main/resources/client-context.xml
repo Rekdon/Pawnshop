@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="Client0" class="rek.oop.model.client.Client">
+        <property name = "id" value="1"/>
+        <property name = "salary" value="10000"/>
+        <property name = "fullname" value="Антропов Василь Дмитрович"/>
+        <property name = "dataOfBirth" value="10.05.1980"/>
+        <property name = "placeOfBirth" value="Черкаси"/>
+        <property name = "sex" value="Чоловіча"/>
+        <property name = "identificationCode" value="5600"/>
+    </bean>
+
+    <bean id="Client1" class="rek.oop.model.client.Client">
+        <property name = "id" value="2"/>
+        <property name = "salary" value="4000"/>
+        <property name = "fullname" value="Антропов Петро Васильович"/>
+        <property name = "dataOfBirth" value="10.05.1997"/>
+        <property name = "placeOfBirth" value="Черкаси"/>
+        <property name = "sex" value="Чоловіча"/>
+        <property name = "identificationCode" value="5600"/>
+    </bean>
+
+    <bean id="Client2" class="rek.oop.model.client.Client">
+        <property name = "id" value="3"/>
+        <property name = "salary" value="8000"/>
+        <property name = "fullname" value="Антропова Анна Петрівна"/>
+        <property name = "dataOfBirth" value="10.05.1983"/>
+        <property name = "placeOfBirth" value="Черкаси"/>
+        <property name = "sex" value="Жіноча"/>
+        <property name = "identificationCode" value="5600"/>
+    </bean>
+
+
+    <bean id="Client3" class="rek.oop.model.client.Client">
+        <property name = "id" value="4"/>
+        <property name = "salary" value="9000"/>
+        <property name = "fullname" value="Петренко Василь Дмитрович"/>
+        <property name = "dataOfBirth" value="10.05.1993"/>
+        <property name = "placeOfBirth" value="Чернівці"/>
+        <property name = "sex" value="Чоловіча"/>
+        <property name = "identificationCode" value="56000"/>
+    </bean>
+
+
+    <bean id="Client4" class="rek.oop.model.client.Client">
+    <property name = "id" value="5"/>
+    <property name = "salary" value="12000"/>
+    <property name = "fullname" value="Дмитренко Анна Петрівна"/>
+    <property name = "dataOfBirth" value="10.05.1990"/>
+    <property name = "placeOfBirth" value="Київ"/>
+    <property name = "sex" value="Чоловіча"/>
+    <property name = "identificationCode" value="3600"/>
+    </bean>
+
+    <bean id="Client5" class="rek.oop.model.client.Client">
+        <property name = "id" value="6"/>
+        <property name = "salary" value="100000"/>
+        <property name = "fullname" value="Ганкевич Влад Владиславович"/>
+        <property name = "dataOfBirth" value="10.07.1985"/>
+        <property name = "placeOfBirth" value="Чернівці"/>
+        <property name = "sex" value="Чоловіча"/>
+        <property name = "identificationCode" value="36200"/>
+    </bean>
+
+    <bean id="Client6" class="rek.oop.model.client.Client">
+        <property name = "id" value="7"/>
+        <property name = "salary" value="20000"/>
+        <property name = "fullname" value="Ілін Віктор Андрійович"/>
+        <property name = "dataOfBirth" value="14.07.1998"/>
+        <property name = "placeOfBirth" value="Чернівці"/>
+        <property name = "sex" value="Чоловіча"/>
+        <property name = "identificationCode" value="5800"/>
+    </bean>
+
+    <bean id="Client7" class="rek.oop.model.client.Client">
+        <property name = "id" value="8"/>
+        <property name = "salary" value="17000"/>
+        <property name = "fullname" value="Дячук Ростислав Любомирович"/>
+        <property name = "dataOfBirth" value="17.03.1998"/>
+        <property name = "placeOfBirth" value="Чернівці"/>
+        <property name = "sex" value="Чоловіча"/>
+        <property name = "identificationCode" value="5800"/>
+    </bean>
+
+    <bean id="Client8" class="rek.oop.model.client.Client">
+        <property name = "id" value="9"/>
+        <property name = "salary" value="14000"/>
+        <property name = "fullname" value="Войцехівський Андрій Любомирович"/>
+        <property name = "dataOfBirth" value="10.05.1998"/>
+        <property name = "placeOfBirth" value="Чернівці"/>
+        <property name = "sex" value="Чоловіча"/>
+        <property name = "identificationCode" value="58000"/>
+    </bean>
+
+
+    <bean id="Client9" class="rek.oop.model.client.Client">
+        <property name = "id" value="10"/>
+        <property name = "salary" value="4000"/>
+        <property name = "fullname" value="Чут Дмитро Андрійович"/>
+        <property name = "dataOfBirth" value="01.05.1998"/>
+        <property name = "placeOfBirth" value="Суми"/>
+        <property name = "sex" value="Чоловіча"/>
+        <property name = "identificationCode" value="58000"/>
+    </bean>
+
+</beans>

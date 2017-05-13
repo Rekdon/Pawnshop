@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="Boss" class="rek.oop.model.seller.Seller">
+        <property name = "id" value="01"/>
+        <property name = "fullName" value="Ганкевич В.В."/>
+        <property name = "sallary" value="20000"/>
+        <property name = "workExperience" value="20"/>
+    </bean>
+
+    <bean id="ExperiencedSeller" class="rek.oop.model.seller.Seller">
+        <property name = "id" value="02"/>
+        <property name = "fullName" value="Пупкін Сергій"/>
+        <property name = "sallary" value="10000"/>
+        <property name = "workExperience" value="10"/>
+    </bean>
+
+    <bean id="NoviceSeller" class="rek.oop.model.seller.Seller">
+        <property name = "id" value="03"/>
+        <property name = "fullName" value="Бутс Олексій"/>
+        <property name = "sallary" value="4000"/>
+        <property name = "workExperience" value="1"/>
+    </bean>
+
+</beans>

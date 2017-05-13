@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="PawnShop - PawnShop.db">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="2.6">
+    <schema id="1">
+      <visible>1</visible>
+    </schema>
+    <table id="2" parent="1" name="Checks"/>
+    <table id="3" parent="1" name="Client"/>
+    <table id="4" parent="1" name="Goods"/>
+    <table id="5" parent="1" name="Sellers"/>
+    <table id="6" parent="1" name="sqlite_sequence"/>
+    <column id="7" parent="2" name="id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="8" parent="2" name="client_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="9" parent="2" name="seller_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="10" parent="2" name="goods_id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <key id="11" parent="2">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="12" parent="3" name="id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="13" parent="3" name="sallary">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="14" parent="3" name="fullName">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="15" parent="3" name="dataOfBirth">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="16" parent="3" name="placeOfBirth">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="17" parent="3" name="sex">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="18" parent="3" name="identificationCode">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <key id="19" parent="3">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="20" parent="4" name="id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="21" parent="4" name="codeGoods">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="22" parent="4" name="nameGoods">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <column id="23" parent="4" name="firstPrice">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="24" parent="4" name="goodsDescription">
+      <data-type>VARCHAR(0,-1)|12</data-type>
+    </column>
+    <key id="25" parent="4">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="26" parent="5" name="id">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="27" parent="5" name="fullName">
+      <data-type>TEXT(0,-1)|12</data-type>
+    </column>
+    <column id="28" parent="5" name="sallary">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="29" parent="5" name="workExperience">
+      <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <key id="30" parent="5">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="31" parent="6" name="name">
+      <data-type>(0,-1)|12</data-type>
+    </column>
+    <column id="32" parent="6" name="seq">
+      <data-type>(0,-1)|12</data-type>
+    </column>
+  </database-model>
+</dataSource>

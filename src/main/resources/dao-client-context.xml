@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="client-context.xml"/>
+    <bean id="dao_client" class="rek.oop.dao.client.impls.DaoClientImpl">
+        <constructor-arg>
+            <list>
+                <ref bean="Client0" />
+                <ref bean="Client1" />
+                <ref bean="Client2" />
+                <ref bean="Client3" />
+                <ref bean="Client4" />
+                <ref bean="Client5" />
+                <ref bean="Client6" />
+                <ref bean="Client7" />
+                <ref bean="Client8" />
+                <ref bean="Client9" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>

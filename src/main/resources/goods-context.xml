@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="Antiques" class="rek.oop.model.goods.Goods">
+        <property name = "id" value="1"/>
+        <property name = "codeGoods" value="01"/>
+        <property name = "nameGoods" value="Кільце"/>
+        <property name = "firstPrice" value="20000"/>
+        <property name = "goodsDescription" value="Кільце з діамантом"/>
+    </bean>
+
+    <bean id="Technique" class="rek.oop.model.goods.Goods">
+        <property name = "id" value="2"/>
+        <property name = "codeGoods" value="02"/>
+        <property name = "nameGoods" value="Пилосос"/>
+        <property name = "firstPrice" value="5000"/>
+        <property name = "goodsDescription" value="Потужний пилосос"/>
+    </bean>
+
+    <bean id="Stead" class="rek.oop.model.goods.Goods">
+        <property name = "id" value="3"/>
+        <property name = "codeGoods" value="03"/>
+        <property name = "nameGoods" value="Земельний участок в селі Іспас"/>
+        <property name = "firstPrice" value="300000"/>
+        <property name = "goodsDescription" value="Земельна ділянка в хорошому стані"/>
+    </bean>
+
+    <bean id="Jewelry" class="rek.oop.model.goods.Goods">
+        <property name = "id" value="4"/>
+        <property name = "codeGoods" value="04"/>
+        <property name = "nameGoods" value="Амулет з ізумрудом"/>
+        <property name = "firstPrice" value="30000"/>
+        <property name = "goodsDescription" value="Амулет ..."/>
+    </bean>
+
+    <bean id="Antiques2" class="rek.oop.model.goods.Goods">
+        <property name = "id" value="5"/>
+        <property name = "codeGoods" value="01"/>
+        <property name = "nameGoods" value="Кільце"/>
+        <property name = "firstPrice" value="15000"/>
+        <property name = "goodsDescription" value="Кільце з золота"/>
+    </bean>
+
+    <bean id="Antiques3" class="rek.oop.model.goods.Goods">
+        <property name = "id" value="6"/>
+        <property name = "codeGoods" value="01"/>
+        <property name = "nameGoods" value="Кільце"/>
+        <property name = "firstPrice" value="10000"/>
+        <property name = "goodsDescription" value="Кільце зі срібла"/>
+    </bean>
+
+    <bean id="Technique1" class="rek.oop.model.goods.Goods">
+        <property name = "id" value="7"/>
+        <property name = "codeGoods" value="02"/>
+        <property name = "nameGoods" value="Мобільний телефон"/>
+        <property name = "firstPrice" value="20000"/>
+        <property name = "goodsDescription" value="Телефон Гейба"/>
+    </bean>
+
+    <bean id="Technique2" class="rek.oop.model.goods.Goods">
+    <property name = "id" value="8"/>
+    <property name = "codeGoods" value="02"/>
+    <property name = "nameGoods" value="Пилосос"/>
+    <property name = "firstPrice" value="10000"/>
+    <property name = "goodsDescription" value="Потужний пилосос"/>
+</bean>
+
+
+    <bean id="Technique3" class="rek.oop.model.goods.Goods">
+        <property name = "id" value="9"/>
+        <property name = "codeGoods" value="02"/>
+        <property name = "nameGoods" value="Чайник"/>
+        <property name = "firstPrice" value="3000"/>
+        <property name = "goodsDescription" value="Потужний чайник"/>
+    </bean>
+
+
+    <bean id="Technique4" class="rek.oop.model.goods.Goods">
+        <property name = "id" value="10"/>
+        <property name = "codeGoods" value="02"/>
+        <property name = "nameGoods" value="Плазма"/>
+        <property name = "firstPrice" value="30000"/>
+        <property name = "goodsDescription" value="Смарт тв плазма фірми Самсунг"/>
+    </bean>
+
+</beans>
