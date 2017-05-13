@@ -1,5 +1,6 @@
 package rek.oop.dao.client.interfaces;
 
+import rek.oop.model.check.Check;
 import rek.oop.model.client.Client;
 
 import java.util.ArrayList;

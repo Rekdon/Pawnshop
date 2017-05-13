@@ -49,10 +49,10 @@ public class DaoSellerImpl implements IDaoSeller {
                 Seller seller = new Seller(id, fullname, sallary, workExperience);
                 sellerArrayList.add(seller);
             }
-       //     co.close();
-       //     statement.close();
+            co.close();
+            statement.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+          //  System.out.println(e.getMessage());
         }
         return sellerArrayList;
     }

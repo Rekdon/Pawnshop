@@ -10,6 +10,11 @@ import java.util.List;
  */
 public interface ISellerService {
     public ArrayList<Seller> readAll();
+    int maxSallary(ArrayList<Seller> sellers);
+    int minSallary(ArrayList<Seller> sellers);
+    int numberOfSellers(ArrayList<Seller> sellers);
+    int maxWorkExperience(ArrayList<Seller> sellers);
+    int minWorkExperience(ArrayList<Seller> sellers);
     List<Seller> getAll();
     Seller getSeller(int id);
     void createSeller(Seller seller);

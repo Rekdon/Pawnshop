@@ -5,6 +5,7 @@ import rek.oop.dao.client.impls.DaoClientImpl;
 import rek.oop.dao.goods.impls.DaoGoodsImpl;
 import rek.oop.dao.seller.impls.DaoSellerImpl;
 import rek.oop.services.check.impls.CheckServiceImpl;
+import rek.oop.services.client.impls.ClientServiceImpl;
 
 import java.sql.*;
 
@@ -172,6 +173,10 @@ public class Main {
         DaoClientImpl clientDao = new DaoClientImpl();
         DaoSellerImpl sellersDao = new DaoSellerImpl();
         DaoCheckImpl checkDao = new DaoCheckImpl();
+
+        ClientServiceImpl clientService = new ClientServiceImpl();
+        System.out.println(clientService.maxSallary(clientDao.readAll()));
+        System.out.println(clientService.minSallary(clientDao.readAll()));
         System.out.println(sellersDao.readAll());
         System.out.println(clientDao.readAll());
         System.out.println(goodsDao.readAll());

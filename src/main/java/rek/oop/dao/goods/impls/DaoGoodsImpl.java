@@ -51,10 +51,10 @@ public class DaoGoodsImpl implements IDaoGoods {
                 Goods goods = new Goods(id, codeGoods, nameGoods, firstPrice, goodsDescriprion);
                 goodsArrayList.add(goods);
             }
-          //  co.close();
-          //  statement.close();
+            co.close();
+            statement.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+          //  System.out.println(e.getMessage());
         }
         return goodsArrayList;
     }

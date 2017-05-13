@@ -51,8 +51,10 @@ public class DaoCheckImpl implements IDaoCheck {
                 Check check = new Check(id, clientDao.readAll().get(client_id-1), sellersDao.readAll().get(seller_id-1), goodsDao.readAll().get(goods_id-1));
                 list.add(check);
             }
+            co.close();
+            statement.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+          //  System.out.println(e.getMessage());
         }
         return list;
 

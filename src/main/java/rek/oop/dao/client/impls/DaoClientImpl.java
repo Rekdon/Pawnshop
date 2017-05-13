@@ -61,10 +61,10 @@ public class DaoClientImpl implements IDaoClient {
                 Client client = new Client(id,sallary,fullName,dataOfBirth,placeOfBirth,sex,identificationCode);
                 clientArrayList.add(client);
             }
-           // co.close();
-         //   statement.close();
+            co.close();
+            statement.close();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+          //  System.out.println(e.getMessage());
         }
         return clientArrayList;
     }

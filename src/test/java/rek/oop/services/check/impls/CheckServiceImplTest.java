@@ -24,11 +24,6 @@ import static org.junit.Assert.assertEquals;
 public class CheckServiceImplTest {
     @Test
     public void sumAll() throws Exception {
-      /*  double sum = 0;
-        for (int i = 0; i < checks.size(); i++) {
-            sum += checks.get(i).getGoods().sum(checks.get(i).getGoods().getFirstPrice());
-        }
-        return sum;*/
 
         DaoCheckImpl daoCheck = new DaoCheckImpl();
         CheckServiceImpl checkService = new CheckServiceImpl();
@@ -37,12 +32,11 @@ public class CheckServiceImplTest {
         for (int i = 0; i < daoCheck.readAll().size(); i++) {
             sum += daoCheck.readAll().get(i).getGoods().sum(daoCheck.readAll().get(i).getGoods().getFirstPrice());
         }
-        Assert.assertEquals(sum, checkService.sumAll(daoCheck.readAll()));
+        Assert.assertEquals(sum, checkService.sumAll(daoCheck.readAll()),0);
     }
 
     @Test
     public void bestSallaryOfDay() throws Exception {
-        // checks.get(idBigMoney(checks) - 1).getSeller().getFullName()
         CheckServiceImpl checkService = new CheckServiceImpl();
         DaoCheckImpl daoCheck = new DaoCheckImpl();
         String result ="Продавець який віддав найбільшу заставу : " + daoCheck.readAll().get(checkService.idBigMoney(daoCheck.readAll())-1).getSeller().getFullName();
@@ -65,19 +59,8 @@ public class CheckServiceImplTest {
        assertEquals(idmax,checkService.idBigMoney(daoCheck.readAll()));
     }
 
-  /*  @Test
+    @Test
     public void salaryRichestClient() throws Exception {
-
-        /*
-        double maxSallary = checks.get(0).getClient().getSalary();
-        for(int i=0;i<checks.size();i++)
-        {
-            if(maxSallary<checks.get(i).getClient().getSalary())
-            {
-                maxSallary=checks.get(i).getClient().getSalary();
-            }
-        }
-        return maxSallary;
 
         CheckServiceImpl checkService = new CheckServiceImpl();
         DaoCheckImpl daoCheck = new DaoCheckImpl();
@@ -89,13 +72,12 @@ public class CheckServiceImplTest {
                 maxSallary=daoCheck.readAll().get(i).getClient().getSalary();
             }
         }
-        Assert.assertEquals(maxSallary,checkService.salaryRichestClient(daoCheck.readAll()));
+        Assert.assertEquals(maxSallary,checkService.salaryRichestClient(daoCheck.readAll()),0);
     }
-    */
+
 
     @Test
     public void infoOfBestClient() throws Exception {
-        //String result=checks.get((idBigMoney(checks))-1).getClient().toString();
         CheckServiceImpl checkService = new CheckServiceImpl();
         DaoCheckImpl daoCheck = new DaoCheckImpl();
         String result =daoCheck.readAll().get(checkService.idBigMoney(daoCheck.readAll())-1).getClient().toString();

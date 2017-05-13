@@ -34,6 +34,61 @@ public class GoodsServiceImpl implements IGoodsService {
         return daoGoods.readAll();
     }
 
+    @Override
+    public int maxPrice(ArrayList<Goods> goodses) {
+        int max;
+        max = goodses.get(0).getFirstPrice();
+        for(int i = 0;i<goodses.size();i++)
+        {
+            if(max<goodses.get(i).getFirstPrice())
+            {
+                max=goodses.get(i).getFirstPrice();
+            }
+        }
+        return max;
+    }
+
+    @Override
+    public int minPrice(ArrayList<Goods> goodses) {
+        int min;
+        min = goodses.get(0).getFirstPrice();
+        for(int i = 0;i<goodses.size();i++)
+        {
+            if(min>goodses.get(i).getFirstPrice())
+            {
+                min=goodses.get(i).getFirstPrice();
+            }
+        }
+        return min;
+    }
+
+    @Override
+    public int numberOfGoods(ArrayList<Goods> goodses) {
+        return goodses.size();
+    }
+
+    @Override
+    public int sumGoods(ArrayList<Goods> goodses) {
+        int sum=0;
+        for(int i=0;i<goodses.size();i++)
+        {
+            sum+=goodses.get(i).getFirstPrice();
+        }
+        return sum;
+    }
+
+    @Override
+    public String nameGoodsPriceMore10000(ArrayList<Goods> goodses) {
+        String result="";
+        for (int i = 0; i < goodses.size(); i++) {
+            if (goodses.get(i).getFirstPrice()<=10000)
+            {
+                result=goodses.get(i).getNameGoods();
+            }
+        }
+        return result;
+    }
+
     public List<Goods> getAll() {
         return daoGoods.getAll();
     }
