@@ -4,10 +4,12 @@ import rek.oop.dao.check.impls.DaoCheckImpl;
 import rek.oop.dao.client.impls.DaoClientImpl;
 import rek.oop.dao.goods.impls.DaoGoodsImpl;
 import rek.oop.dao.seller.impls.DaoSellerImpl;
+import rek.oop.model.check.Check;
 import rek.oop.services.check.impls.CheckServiceImpl;
 import rek.oop.services.client.impls.ClientServiceImpl;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  * Created by Rekdon on 27.03.2017.
@@ -174,6 +176,10 @@ public class Main {
         DaoSellerImpl sellersDao = new DaoSellerImpl();
         DaoCheckImpl checkDao = new DaoCheckImpl();
 
+        System.out.println(checkDao.readAll());
+        System.out.println(sellersDao.readAll());
+
+/*
         ClientServiceImpl clientService = new ClientServiceImpl();
         System.out.println(clientService.maxSallary(clientDao.readAll()));
         System.out.println(clientService.minSallary(clientDao.readAll()));
@@ -190,6 +196,7 @@ public class Main {
         System.out.println(checkService.BestSallaryOfDay(checkDao.readAll()));
         System.out.println(checkService.salaryRichestClient(checkDao.readAll()));
         System.out.println(checkService.infoOfBestClient(checkDao.readAll()));
-        System.out.println(checkService.readAll().get(0));
+        System.out.println(checkService.readAll().get(0));*/
+
     }
 }

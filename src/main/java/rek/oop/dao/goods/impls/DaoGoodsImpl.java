@@ -4,10 +4,7 @@ import rek.oop.dao.goods.interfaces.IDaoGoods;
 import rek.oop.model.client.Client;
 import rek.oop.model.goods.Goods;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +15,21 @@ public class DaoGoodsImpl implements IDaoGoods {
 
     ArrayList<Goods> goodses = new ArrayList<Goods>();
 
-    public DaoGoodsImpl() {
+    public DaoGoodsImpl() throws SQLException {
+            Connection co = DriverManager.getConnection("jdbc:sqlite:PawnShop.db");
+            Statement statement = co.createStatement();
+            String query = "SELECT * FROM Goods";
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                int codeGoods = rs.getInt("codeGoods");
+                String nameGoods = rs.getString("nameGoods");
+                int firstPrice = rs.getInt("firstPrice");
+                String goodsDescriprion = rs.getString("goodsDescription");
+                Goods goods = new Goods(id, codeGoods, nameGoods, firstPrice, goodsDescriprion);
+                goodses.add(goods);
+            }
+            co.close();
     }
 
     public DaoGoodsImpl(ArrayList<Goods> goodses) {
@@ -35,28 +46,8 @@ public class DaoGoodsImpl implements IDaoGoods {
 
     @Override
     public ArrayList<Goods> readAll() {
-        ArrayList<Goods> goodsArrayList = new ArrayList<>();
-        try {
-            Connection co = DriverManager.getConnection("jdbc:sqlite:PawnShop.db");
-            Statement statement = co.createStatement();
-            String query = "SELECT * FROM Goods";
-            ResultSet rs = statement.executeQuery(query);
-            while(rs.next())
-            {
-                int id = rs.getInt("id");
-                int codeGoods = rs.getInt("codeGoods");
-                String nameGoods = rs.getString("nameGoods");
-                int firstPrice = rs.getInt("firstPrice");
-                String goodsDescriprion = rs.getString("goodsDescription");
-                Goods goods = new Goods(id, codeGoods, nameGoods, firstPrice, goodsDescriprion);
-                goodsArrayList.add(goods);
-            }
-            co.close();
-            statement.close();
-        } catch (Exception e) {
-          //  System.out.println(e.getMessage());
-        }
-        return goodsArrayList;
+
+        return this.goodses;
     }
 
     public List<Goods> getAll() {

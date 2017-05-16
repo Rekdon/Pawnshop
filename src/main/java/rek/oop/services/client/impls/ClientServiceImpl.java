@@ -4,6 +4,7 @@ import rek.oop.dao.client.interfaces.IDaoClient;
 import rek.oop.model.client.Client;
 import rek.oop.services.client.interfaces.IClientService;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class ClientServiceImpl implements IClientService {
 
 
     @Override
-    public ArrayList<Client> readAll() {
+    public ArrayList<Client> readAll() throws SQLException {
         return daoClient.readAll();
     }
 

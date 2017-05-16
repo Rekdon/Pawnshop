@@ -3,6 +3,7 @@ package rek.oop.dao.client.interfaces;
 import rek.oop.model.check.Check;
 import rek.oop.model.client.Client;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +11,7 @@ import java.util.List;
  * Created by Rekdon on 01.04.2017.
  */
 public interface IDaoClient {
-    ArrayList<Client> readAll();
+    ArrayList<Client> readAll() throws SQLException;
     List<Client> getAll();
     Client getClient(int id);
     void createClient(Client client);

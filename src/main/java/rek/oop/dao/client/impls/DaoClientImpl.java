@@ -4,10 +4,7 @@ import rek.oop.dao.client.interfaces.IDaoClient;
 import rek.oop.model.check.Check;
 import rek.oop.model.client.Client;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,57 +13,51 @@ import java.util.List;
  */
 public class DaoClientImpl implements IDaoClient {
 
-    public List<Client> clients = new ArrayList<Client>();
+    public ArrayList<Client> clients = new ArrayList<Client>();
 
-    public List<Client> getChecks() {
+    public ArrayList<Client> getChecks() {
         return clients;
     }
 
-    public void setChecks(List<Client> clients) {
+    public void setChecks(ArrayList<Client> clients) {
         this.clients = clients;
     }
 
-    public DaoClientImpl(List<Client> clients) {
+    public DaoClientImpl(ArrayList<Client> clients) {
         this.clients = clients;
     }
 
-    public DaoClientImpl() {
+    public DaoClientImpl() throws SQLException {
+        Connection co = DriverManager.getConnection("jdbc:sqlite:PawnShop.db");
+        Statement statement = co.createStatement();
+        String query = "SELECT * FROM Client";
+        ResultSet rs = statement.executeQuery(query);
+        while(rs.next())
+        {
+            int id = rs.getInt("id");
+            int sallary = rs.getInt("sallary");
+            String fullName = rs.getString("fullName");
+            String dataOfBirth = rs.getString("dataOfBirth");
+            String placeOfBirth = rs.getString("placeOfBirth");
+            String sex = rs.getString("sex");
+            int identificationCode = rs.getInt("identificationCode");
+            Client client = new Client(id,sallary,fullName,dataOfBirth,placeOfBirth,sex,identificationCode);
+            clients.add(client);
+        }
+        co.close();
     }
 
     public List<Client> getClients() {
         return clients;
     }
 
-    public void setClients(List<Client> clients) {
+    public void setClients(ArrayList<Client> clients) {
         this.clients = clients;
     }
 
     @Override
-    public ArrayList<Client> readAll() {
-        ArrayList<Client> clientArrayList = new ArrayList<>();
-        try {
-            Connection co = DriverManager.getConnection("jdbc:sqlite:PawnShop.db");
-            Statement statement = co.createStatement();
-            String query = "SELECT * FROM Client";
-            ResultSet rs = statement.executeQuery(query);
-            while(rs.next())
-            {
-                int id = rs.getInt("id");
-                int sallary = rs.getInt("sallary");
-                String fullName = rs.getString("fullName");
-                String dataOfBirth = rs.getString("dataOfBirth");
-                String placeOfBirth = rs.getString("placeOfBirth");
-                String sex = rs.getString("sex");
-                int identificationCode = rs.getInt("identificationCode");
-                Client client = new Client(id,sallary,fullName,dataOfBirth,placeOfBirth,sex,identificationCode);
-                clientArrayList.add(client);
-            }
-            co.close();
-            statement.close();
-        } catch (Exception e) {
-          //  System.out.println(e.getMessage());
-        }
-        return clientArrayList;
+    public ArrayList<Client> readAll()  {
+            return this.clients;
     }
 
     public List<Client> getAll() {

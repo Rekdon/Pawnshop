@@ -4,10 +4,7 @@ import rek.oop.dao.seller.interfaces.IDaoSeller;
 import rek.oop.model.goods.Goods;
 import rek.oop.model.seller.Seller;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +15,21 @@ public class DaoSellerImpl implements IDaoSeller {
 
     ArrayList <Seller> sellers = new ArrayList<Seller>();
 
-    public DaoSellerImpl() {
+    public DaoSellerImpl() throws SQLException {
+            Connection co = DriverManager.getConnection("jdbc:sqlite:PawnShop.db");
+            Statement statement = co.createStatement();
+            String query = "SELECT * FROM Sellers";
+            ResultSet rs = statement.executeQuery(query);
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String fullname = rs.getString("fullname");
+                int sallary = rs.getInt("sallary");
+                int workExperience = rs.getInt("workExperience");
+                Seller seller = new Seller(id, fullname, sallary, workExperience);
+                sellers.add(seller);
+            }
+            co.close();
+
     }
 
     public DaoSellerImpl(ArrayList<Seller> sellers) {
@@ -35,26 +46,7 @@ public class DaoSellerImpl implements IDaoSeller {
 
     @Override
     public ArrayList<Seller> readAll() {
-        ArrayList<Seller> sellerArrayList = new ArrayList<>();
-        try {
-            Connection co = DriverManager.getConnection("jdbc:sqlite:PawnShop.db");
-            Statement statement = co.createStatement();
-            String query = "SELECT * FROM Sellers";
-            ResultSet rs = statement.executeQuery(query);
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String fullname = rs.getString("fullname");
-                int sallary = rs.getInt("sallary");
-                int workExperience = rs.getInt("workExperience");
-                Seller seller = new Seller(id, fullname, sallary, workExperience);
-                sellerArrayList.add(seller);
-            }
-            co.close();
-            statement.close();
-        } catch (Exception e) {
-          //  System.out.println(e.getMessage());
-        }
-        return sellerArrayList;
+       return this.sellers;
     }
 
     public List<Seller> getAll() {
