@@ -1,18 +1,19 @@
 package rek.oop.dao.check.impls;
 
+import org.springframework.stereotype.Service;
 import rek.oop.dao.check.interfaces.IDaoCheck;
-import rek.oop.dao.client.impls.DaoClientImpl;
+import rek.oop.controller.DaoClientImpl;
 import rek.oop.dao.goods.impls.DaoGoodsImpl;
 import rek.oop.dao.seller.impls.DaoSellerImpl;
 import rek.oop.model.check.Check;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Rekdon on 01.04.2017.
  */
+@Service
 public class DaoCheckImpl implements IDaoCheck {
 
     public ArrayList<Check> checks = new ArrayList<Check>();
@@ -21,7 +22,7 @@ public class DaoCheckImpl implements IDaoCheck {
         return checks;
     }
 
-    public void setGhecks(ArrayList<Check> checks) {
+    public void setChecks(ArrayList<Check> checks) {
         this.checks = checks;
     }
 
@@ -50,31 +51,15 @@ public class DaoCheckImpl implements IDaoCheck {
         this.checks = checks;
     }
 
+
     @Override
     public ArrayList<Check> readAll() {
         return this.checks;
     }
 
-    @Override
-    public String read() throws SQLException {
-        String result = "";
-        Connection co = DriverManager.getConnection("jdbc:sqlite:PawnShop.db");
-        Statement statement = co.createStatement();
-        String query = "SELECT * FROM Checks";
-        ResultSet rs = statement.executeQuery(query);
-        while (rs.next()) {
-            int id = rs.getInt("id");
-            int client_id = rs.getInt("client_id");
-            int seller_id = rs.getInt("seller_id");
-            int goods_id = rs.getInt("goods_id");
-            result += id + " " + client_id + " " + seller_id + " " + goods_id + "\n";
 
-        }
-        return result;
-    }
-
-    public List<Check> getAll() {
-        return checks;
+    public ArrayList<Check> getAll() {
+            return checks;
     }
 
     public Check getCheck(int id) {

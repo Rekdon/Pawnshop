@@ -1,15 +1,15 @@
 package rek.oop;
 
 import rek.oop.dao.check.impls.DaoCheckImpl;
-import rek.oop.dao.client.impls.DaoClientImpl;
+import rek.oop.controller.DaoClientImpl;
 import rek.oop.dao.goods.impls.DaoGoodsImpl;
 import rek.oop.dao.seller.impls.DaoSellerImpl;
-import rek.oop.model.check.Check;
 import rek.oop.services.check.impls.CheckServiceImpl;
 import rek.oop.services.client.impls.ClientServiceImpl;
+import rek.oop.services.goods.impls.GoodsServiceImpl;
+import rek.oop.services.seller.impls.SellerServiceImpl;
 
 import java.sql.*;
-import java.util.ArrayList;
 
 /**
  * Created by Rekdon on 27.03.2017.
@@ -171,13 +171,21 @@ public class Main {
 */
       //  System.out.println(listCheck.get(0).getGoods().sum(listCheck.get(0).getGoods().getFirstPrice()));
        // listCheck.get(0).d
+
         DaoGoodsImpl goodsDao = new DaoGoodsImpl();
         DaoClientImpl clientDao = new DaoClientImpl();
         DaoSellerImpl sellersDao = new DaoSellerImpl();
         DaoCheckImpl checkDao = new DaoCheckImpl();
 
+        GoodsServiceImpl goodsService = new GoodsServiceImpl();
+        ClientServiceImpl clientService = new ClientServiceImpl();
+        SellerServiceImpl sellerService = new SellerServiceImpl();
+        CheckServiceImpl checkService = new CheckServiceImpl();
+
         System.out.println(checkDao.readAll());
         System.out.println(sellersDao.readAll());
+        System.out.println(checkService.sumAll(checkDao.readAll()));
+        System.out.println(clientService.minSallary(clientDao.readAll()));
 
 /*
         ClientServiceImpl clientService = new ClientServiceImpl();

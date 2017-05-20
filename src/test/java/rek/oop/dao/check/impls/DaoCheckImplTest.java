@@ -2,7 +2,8 @@ package rek.oop.dao.check.impls;
 
 import com.google.gson.Gson;
 import org.junit.Test;
-import rek.oop.dao.client.impls.DaoClientImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import rek.oop.controller.DaoClientImpl;
 import rek.oop.dao.goods.impls.DaoGoodsImpl;
 import rek.oop.dao.seller.impls.DaoSellerImpl;
 import rek.oop.model.check.Check;
@@ -13,12 +14,104 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Created by Rekdon on 15.05.2017.
  */
 public class DaoCheckImplTest {
+    @Autowired
+    public ArrayList<Check> checks = new ArrayList<Check>();
+
+    @Test
+    public void getAll() throws Exception {
+        DaoCheckImpl daoCheck = new DaoCheckImpl();
+        int count = daoCheck.readAll().size();
+        assertEquals(daoCheck.getAll().size(), count);
+    }
+
+    @Test
+    public void getCheck() throws Exception {
+        DaoCheckImpl daoCheck = new DaoCheckImpl();
+        Check result = null;
+        for (Check check : daoCheck.readAll()) {
+            if (check.getId() == 2) {
+                result = new Check();
+            }
+        }
+        Gson gson = new Gson();
+        String str1 = gson.toJson(result);
+        String str2 = gson.toJson(daoCheck.getCheck(2));
+        assertEquals(str1,str2);
+
+    }
+
+    @Test
+    public void createCheck() throws Exception {
+        ArrayList<Check> checks = new ArrayList<>();
+        ArrayList<Check> checks2 = new ArrayList<>();
+        Check check = new Check();
+        Check check2 = new Check();
+        DaoCheckImpl daocheck = new DaoCheckImpl();
+        checks=daocheck.readAll();
+        checks.add(check);
+
+        daocheck.createCheck(check2);
+        daocheck.getAll();
+        checks2=daocheck.getAll();
+
+        checks.add(check);
+
+        daocheck.createCheck(check2);
+        assertEquals(checks2.size(),checks.size());
+    }
+
+  /*  @Test
+    public void updateCheck() throws Exception {
+        Check check = new Check();
+        DaoCheckImpl daoCheck = new DaoCheckImpl();
+        Check updateCheck = null;
+        for (Check check1 : daoCheck.readAll()) {
+            if (check1.getId() == 3) {
+                updateCheck = check1;
+                break;
+            }
+        }
+        updateCheck = check;
+        assertEquals(check,daoCheck.updateCheck(check));
+    }*/
+
+    @Test
+    public void deleteCheck() throws Exception {
+        ArrayList<Check> checks = new ArrayList<>();
+        ArrayList<Check> checks2 = new ArrayList<>();
+        Check check = new Check();
+        Check check2 = new Check();
+        DaoCheckImpl daocheck = new DaoCheckImpl();
+        checks=daocheck.readAll();
+        checks.remove(daocheck.readAll().size()-1);
+
+        checks2=daocheck.getAll();
+        daocheck.deleteCheck(checks2.size());
+
+
+        checks.add(check);
+
+        daocheck.createCheck(check2);
+        assertEquals(checks2.size(),checks.size());
+    }
+
+ /*   @Test
+    public void showAll() throws Exception {
+        DaoCheckImpl daoCheck = new DaoCheckImpl();
+        String result="";
+        for (Check check : daoCheck.readAll()) {
+            result+=check.toString();
+        }
+        String result2 = daoCheck.showAll();
+        assertEquals(daoCheck.showAll(),result);
+    }*/
+
     @Test
     public void readAll() throws Exception {
         ArrayList<Check> list = new ArrayList<>();
@@ -40,10 +133,10 @@ public class DaoCheckImplTest {
 
         DaoCheckImpl checkDao = new DaoCheckImpl();
         Gson gson = new Gson();
-        String str1=gson.toJson(list);
-        String str2=gson.toJson(checkDao.readAll());
+        String str1 = gson.toJson(list);
+        String str2 = gson.toJson(checkDao.readAll());
 
         // CheckServiceImpl checkService = new CheckServiceImpl();
-        assertEquals(str1,str2);
+        assertEquals(str1, str2);
     }
 }

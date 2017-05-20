@@ -1,10 +1,8 @@
 package rek.oop.services.client.impls;
 
 import com.google.gson.Gson;
-import org.junit.Assert;
 import org.junit.Test;
-import rek.oop.dao.check.impls.DaoCheckImpl;
-import rek.oop.dao.client.impls.DaoClientImpl;
+import rek.oop.controller.DaoClientImpl;
 import rek.oop.model.client.Client;
 
 import java.sql.Connection;

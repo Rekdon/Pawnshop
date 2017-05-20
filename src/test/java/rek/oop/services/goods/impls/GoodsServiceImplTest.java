@@ -2,7 +2,6 @@ package rek.oop.services.goods.impls;
 
 import com.google.gson.Gson;
 import org.junit.Test;
-import rek.oop.dao.client.impls.DaoClientImpl;
 import rek.oop.dao.goods.impls.DaoGoodsImpl;
 import rek.oop.model.goods.Goods;
 

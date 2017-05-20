@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <import resource="client-context.xml"/>
-    <bean id="dao_client" class="rek.oop.dao.client.impls.DaoClientImpl">
+    <bean id="dao_client" class="rek.oop.controller.DaoClientImpl">
         <constructor-arg>
             <list>
                 <ref bean="Client0" />

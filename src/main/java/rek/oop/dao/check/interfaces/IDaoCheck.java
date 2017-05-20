@@ -11,7 +11,6 @@ import java.util.List;
  */
 public interface IDaoCheck {
     ArrayList<Check> readAll();
-    String read() throws SQLException ;
     List<Check> getAll();
     Check getCheck(int id);
     void createCheck(Check check);

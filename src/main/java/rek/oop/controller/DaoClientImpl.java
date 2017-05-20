@@ -1,5 +1,6 @@
-package rek.oop.dao.client.impls;
+package rek.oop.controller;
 
+import org.springframework.stereotype.Service;
 import rek.oop.dao.client.interfaces.IDaoClient;
 import rek.oop.model.check.Check;
 import rek.oop.model.client.Client;
@@ -11,6 +12,7 @@ import java.util.List;
 /**
  * Created by Rekdon on 01.04.2017.
  */
+@Service
 public class DaoClientImpl implements IDaoClient {
 
     public ArrayList<Client> clients = new ArrayList<Client>();
@@ -47,7 +49,7 @@ public class DaoClientImpl implements IDaoClient {
         co.close();
     }
 
-    public List<Client> getClients() {
+    public ArrayList<Client> getClients() {
         return clients;
     }
 
@@ -60,7 +62,7 @@ public class DaoClientImpl implements IDaoClient {
             return this.clients;
     }
 
-    public List<Client> getAll() {
+    public ArrayList<Client> getAll() {
         return clients;
     }
 

@@ -1,9 +1,16 @@
 package rek.oop.controller;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import rek.oop.dao.check.impls.DaoCheckImpl;
+import rek.oop.model.check.Check;
+import rek.oop.model.client.Client;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 /**
  * Created by Rekdon on 12.04.2017.
  */
@@ -11,14 +18,17 @@ import org.springframework.web.bind.annotation.RestController;
 public class FirstController {
 
 
-    @RequestMapping("/hello")
-    public String hello(){
+    @Qualifier("daoClientImpl")
+    @Autowired
+    private DaoClientImpl service;
 
-        return "Hello";
-
+    @RequestMapping("/api/greetings")
+    public ArrayList<Client> hello() throws SQLException {
+        return service.getAll();
     }
 
     //http://localhost:8080/titular
+
 
     @RequestMapping("/titular")
     public String titular(){

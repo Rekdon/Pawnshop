@@ -1,11 +1,10 @@
 package rek.oop.services.check.impls;
 
+import org.springframework.stereotype.Service;
 import rek.oop.dao.check.impls.DaoCheckImpl;
-import rek.oop.dao.check.interfaces.IDaoCheck;
 import rek.oop.model.check.Check;
 import rek.oop.services.check.interfaces.ICheckService;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +12,7 @@ import java.util.List;
  * Created by Rekdon on 01.04.2017.
  */
 
-
+@Service
 public class CheckServiceImpl implements ICheckService {
 
     DaoCheckImpl daoCheck;
