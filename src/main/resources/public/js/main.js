@@ -1,11 +1,10 @@
 var app = angular.module("Start",[]);
 
-app.controller("FirstController", function ($scope) {
-    $scope.goods = [{
-        id: '1',
-        codeGoods: '2',
-        nameGoods: 'Пилосос',
-        firstPrice:'5000',
-        goodsDescription:'Потужний пилосос'
-    }];
+
+app.controller("FirstController", function ($scope,$http) {
+    $scope.goods = [];
+    $http.get('/api/goods').then(function (response){
+        $scope.goods=response.data;
+        console.log(response);
+    });
 });

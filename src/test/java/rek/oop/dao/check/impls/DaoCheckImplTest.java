@@ -4,8 +4,8 @@ import com.google.gson.Gson;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import rek.oop.controller.DaoClientImpl;
-import rek.oop.dao.goods.impls.DaoGoodsImpl;
-import rek.oop.dao.seller.impls.DaoSellerImpl;
+import rek.oop.controller.DaoGoodsImpl;
+import rek.oop.controller.DaoSellerImpl;
 import rek.oop.model.check.Check;
 
 import java.sql.Connection;
@@ -136,7 +136,6 @@ public class DaoCheckImplTest {
         String str1 = gson.toJson(list);
         String str2 = gson.toJson(checkDao.readAll());
 
-        // CheckServiceImpl checkService = new CheckServiceImpl();
         assertEquals(str1, str2);
     }
 }

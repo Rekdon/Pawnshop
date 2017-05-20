@@ -1,16 +1,18 @@
-package rek.oop.dao.goods.impls;
+package rek.oop.controller;
 
+
+import org.springframework.stereotype.Service;
 import rek.oop.dao.goods.interfaces.IDaoGoods;
-import rek.oop.model.client.Client;
 import rek.oop.model.goods.Goods;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
+
 
 /**
  * Created by Rekdon on 01.04.2017.
  */
+@Service
 public class DaoGoodsImpl implements IDaoGoods {
 
     ArrayList<Goods> goodses = new ArrayList<Goods>();
@@ -25,8 +27,8 @@ public class DaoGoodsImpl implements IDaoGoods {
                 int codeGoods = rs.getInt("codeGoods");
                 String nameGoods = rs.getString("nameGoods");
                 int firstPrice = rs.getInt("firstPrice");
-                String goodsDescriprion = rs.getString("goodsDescription");
-                Goods goods = new Goods(id, codeGoods, nameGoods, firstPrice, goodsDescriprion);
+                String goodsDescription = rs.getString("goodsDescription");
+                Goods goods = new Goods(id, codeGoods, nameGoods, firstPrice, goodsDescription);
                 goodses.add(goods);
             }
             co.close();
@@ -50,7 +52,7 @@ public class DaoGoodsImpl implements IDaoGoods {
         return this.goodses;
     }
 
-    public List<Goods> getAll() {
+    public ArrayList<Goods> getAll() {
         return goodses;
     }
 

@@ -1,5 +1,6 @@
-package rek.oop.dao.seller.impls;
+package rek.oop.controller;
 
+import org.springframework.stereotype.Service;
 import rek.oop.dao.seller.interfaces.IDaoSeller;
 import rek.oop.model.goods.Goods;
 import rek.oop.model.seller.Seller;
@@ -11,6 +12,7 @@ import java.util.List;
 /**
  * Created by Rekdon on 01.04.2017.
  */
+@Service
 public class DaoSellerImpl implements IDaoSeller {
 
     ArrayList <Seller> sellers = new ArrayList<Seller>();
@@ -22,10 +24,10 @@ public class DaoSellerImpl implements IDaoSeller {
             ResultSet rs = statement.executeQuery(query);
             while (rs.next()) {
                 int id = rs.getInt("id");
-                String fullname = rs.getString("fullname");
+                String fullName = rs.getString("fullName");
                 int sallary = rs.getInt("sallary");
                 int workExperience = rs.getInt("workExperience");
-                Seller seller = new Seller(id, fullname, sallary, workExperience);
+                Seller seller = new Seller(id, fullName, sallary, workExperience);
                 sellers.add(seller);
             }
             co.close();
@@ -49,7 +51,7 @@ public class DaoSellerImpl implements IDaoSeller {
        return this.sellers;
     }
 
-    public List<Seller> getAll() {
+    public ArrayList<Seller> getAll() {
         return sellers;
     }
 

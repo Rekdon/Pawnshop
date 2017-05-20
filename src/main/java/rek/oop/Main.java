@@ -2,8 +2,8 @@ package rek.oop;
 
 import rek.oop.dao.check.impls.DaoCheckImpl;
 import rek.oop.controller.DaoClientImpl;
-import rek.oop.dao.goods.impls.DaoGoodsImpl;
-import rek.oop.dao.seller.impls.DaoSellerImpl;
+import rek.oop.controller.DaoGoodsImpl;
+import rek.oop.controller.DaoSellerImpl;
 import rek.oop.services.check.impls.CheckServiceImpl;
 import rek.oop.services.client.impls.ClientServiceImpl;
 import rek.oop.services.goods.impls.GoodsServiceImpl;

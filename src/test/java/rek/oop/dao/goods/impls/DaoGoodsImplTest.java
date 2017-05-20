@@ -2,6 +2,7 @@ package rek.oop.dao.goods.impls;
 
 import com.google.gson.Gson;
 import org.junit.Test;
+import rek.oop.controller.DaoGoodsImpl;
 import rek.oop.model.goods.Goods;
 
 import java.sql.Connection;

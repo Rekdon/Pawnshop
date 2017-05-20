@@ -5,8 +5,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import rek.oop.dao.check.impls.DaoCheckImpl;
 import rek.oop.controller.DaoClientImpl;
-import rek.oop.dao.goods.impls.DaoGoodsImpl;
-import rek.oop.dao.seller.impls.DaoSellerImpl;
+import rek.oop.controller.DaoGoodsImpl;
+import rek.oop.controller.DaoSellerImpl;
 import rek.oop.model.check.Check;
 
 import java.sql.Connection;
