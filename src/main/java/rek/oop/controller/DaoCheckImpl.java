@@ -1,4 +1,4 @@
-package rek.oop.dao.check.impls;
+package rek.oop.controller;
 
 import org.springframework.stereotype.Service;
 import rek.oop.dao.check.interfaces.IDaoCheck;

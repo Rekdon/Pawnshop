@@ -1,7 +1,7 @@
 package rek.oop.services.check.impls;
 
 import org.springframework.stereotype.Service;
-import rek.oop.dao.check.impls.DaoCheckImpl;
+import rek.oop.controller.DaoCheckImpl;
 import rek.oop.model.check.Check;
 import rek.oop.services.check.interfaces.ICheckService;
 

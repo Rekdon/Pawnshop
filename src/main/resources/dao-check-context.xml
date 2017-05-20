@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <import resource="check-context.xml"/>
-    <bean id="dao_check" class="rek.oop.dao.check.impls.DaoCheckImpl">
+    <bean id="dao_check" class="rek.oop.controller.DaoCheckImpl">
         <constructor-arg>
             <list>
                 <ref bean="Check0" />

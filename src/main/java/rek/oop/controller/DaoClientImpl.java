@@ -36,14 +36,14 @@ public class DaoClientImpl implements IDaoClient {
         ResultSet rs = statement.executeQuery(query);
         while(rs.next())
         {
-            int id = rs.getInt("id");
-            int sallary = rs.getInt("sallary");
+            Integer id = rs.getInt("id");
+            Integer sallarys = rs.getInt("sallary");
             String fullName = rs.getString("fullName");
             String dataOfBirth = rs.getString("dataOfBirth");
             String placeOfBirth = rs.getString("placeOfBirth");
             String sex = rs.getString("sex");
             int identificationCode = rs.getInt("identificationCode");
-            Client client = new Client(id,sallary,fullName,dataOfBirth,placeOfBirth,sex,identificationCode);
+            Client client = new Client(id,sallarys,fullName,dataOfBirth,placeOfBirth,sex,identificationCode);
             clients.add(client);
         }
         co.close();

@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 
 @RestController
-public class FirstController {
+public class GoodsController {
 
     @Autowired
     private DaoGoodsImpl service;

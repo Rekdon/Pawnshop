@@ -1,6 +1,6 @@
 package rek.oop;
 
-import rek.oop.dao.check.impls.DaoCheckImpl;
+import rek.oop.controller.DaoCheckImpl;
 import rek.oop.controller.DaoClientImpl;
 import rek.oop.controller.DaoGoodsImpl;
 import rek.oop.controller.DaoSellerImpl;

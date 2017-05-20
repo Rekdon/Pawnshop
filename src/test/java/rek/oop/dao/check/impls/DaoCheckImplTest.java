@@ -3,6 +3,7 @@ package rek.oop.dao.check.impls;
 import com.google.gson.Gson;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import rek.oop.controller.DaoCheckImpl;
 import rek.oop.controller.DaoClientImpl;
 import rek.oop.controller.DaoGoodsImpl;
 import rek.oop.controller.DaoSellerImpl;
