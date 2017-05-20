@@ -21,8 +21,7 @@ import static org.junit.Assert.assertEquals;
  * Created by Rekdon on 15.05.2017.
  */
 public class DaoCheckImplTest {
-    @Autowired
-    public ArrayList<Check> checks = new ArrayList<Check>();
+
 
     @Test
     public void getAll() throws Exception {
@@ -67,7 +66,7 @@ public class DaoCheckImplTest {
         assertEquals(checks2.size(),checks.size());
     }
 
-  /*  @Test
+ /*   @Test
     public void updateCheck() throws Exception {
         Check check = new Check();
         DaoCheckImpl daoCheck = new DaoCheckImpl();
@@ -79,7 +78,7 @@ public class DaoCheckImplTest {
             }
         }
         updateCheck = check;
-        assertEquals(check,daoCheck.updateCheck(check));
+        assertEquals(check.getClient(),daoCheck.updateCheck(check));
     }*/
 
     @Test
